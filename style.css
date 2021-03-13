@@ -1,0 +1,58 @@
+body {
+    background-color: #005a91;
+}
+
+#name-and-number {
+    font-size: 21pt;
+}
+
+#container {
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+#pokemon-desc {
+    font-style: italic;
+    width: 30%;
+    margin: auto;
+    padding-top: 10px;
+}
+
+#pokemon-logo-img {
+    width: 25%;
+    height: auto;
+}
+
+.white-text {
+    color: white;
+}
+
+.pokemon-image-small {
+    opacity: 50%;
+    height: 35%;
+    width: auto;
+}
+
+#goal-date {
+    width: 25%;
+    height: 50px;
+    font-size: 15pt;
+}
+
+#store-date-button {
+    width: 25%;
+    height: 50px;
+    margin-top: 15px;
+    font-size: 15pt;
+}
+
+#footer {
+    text-align: center;
+    margin-top: 100px;
+    color: white;
+}
+
+#footer a {
+    color: white;
+}
