@@ -24,6 +24,10 @@ body {
     height: auto;
 }
 
+#pokemon-img {
+    width: 20%;
+}
+
 .white-text {
     color: white;
 }
