@@ -1,6 +1,7 @@
 var localStorage = window.localStorage;
 var goalDateKey = "pokemon.day.calculator.goal.date";
 var pokemonArtUrlBase = "https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/";
+var pokedexUrlBase = "https://pokemondb.net/pokedex/";
 
 function initPage(dateGoal) {
   var today = new Date();
@@ -24,6 +25,7 @@ function initPage(dateGoal) {
     }
 
     $("#name-and-number").html(nameText);
+    $("#name-and-number").prop('href', pokedexUrlBase + pokemonToday.name.toLowerCase());
     $("#pokemon-desc").html(descFixed);
 
     var pokedexId = addLeadingZeros(pokemonToday.pkdx_id);

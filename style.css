@@ -32,6 +32,16 @@ body {
     color: white;
 }
 
+.white-text-hyperlink {
+    color: white;
+    text-decoration: none;
+}
+
+.white-text-hyperlink:hover {
+    font-weight: bold;
+    color: yellow;
+}
+
 .pokemon-image-small {
     opacity: 50%;
     height: 35%;
