@@ -3,6 +3,8 @@
 <head>
     <meta charset="utf-8">
     <title>Pokemon of the Day</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">    
     <link rel="shortcut icon" href="img/tab_icon.png">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -23,7 +25,7 @@
         });
     </script>
     <div id="container">
-        <h1 class="white-text"><img id="pokemon-logo-img" src="img/logo.png" /> of the Day</h1>
+        <h1 class="white-text"><img id="pokemon-logo-img" src="img/logo.png" /> <span class="pokemon-font">of the Day</span></h1>
 
         <div id="goal-date-container" style="display:none; margin-top: 100px;">
             <input id="goal-date" type="date"/><br />
@@ -33,7 +35,7 @@
         <img id="pokemon-img" />
 
         <div>
-            <a id="name-and-number" class="white-text-hyperlink" href="#"></a>
+            <a id="name-and-number" class="pokemon-name-hyperlink pokemon-font" href="#"></a>
         </div>
 
         <div id="pokemon-desc" class="white-text"></div>

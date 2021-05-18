@@ -32,14 +32,21 @@ body {
     color: white;
 }
 
-.white-text-hyperlink {
-    color: white;
+.pokemon-font {
+    font-family: Roboto;
+    font-size: 40pt !important;
+    color: #FFCC01;
+    font-weight: bold;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #2872B9;
+    text-shadow: 4px 4px #17285E;
+}
+.pokemon-name-hyperlink {
     text-decoration: none;
 }
 
-.white-text-hyperlink:hover {
-    font-weight: bold;
-    color: yellow;
+.pokemon-name-hyperlink:hover {
+    text-decoration: underline;
 }
 
 .pokemon-image-small {
