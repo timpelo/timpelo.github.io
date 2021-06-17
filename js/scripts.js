@@ -29,7 +29,13 @@ function initPage(dateGoal) {
     $("#pokemon-desc").html(descFixed);
 
     var pokedexId = addLeadingZeros(pokemonToday.pkdx_id);
-    $("#pokemon-img").attr("src", pokemonArtUrlBase + pokedexId + ".png?raw=true");
+
+    if(pokedexId == 7) {
+      // For Squirtle we use custom image
+      $("#pokemon-img").attr("src", "img/squirtle.png");
+    } else {
+      $("#pokemon-img").attr("src", pokemonArtUrlBase + pokedexId + ".png?raw=true");
+    }
   }
 
   // Set visible date to footer
