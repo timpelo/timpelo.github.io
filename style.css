@@ -28,6 +28,10 @@ body {
     width: 20%;
 }
 
+.pokemon-img-large {
+    width: 40% !important;
+}
+
 .white-text {
     color: white;
 }

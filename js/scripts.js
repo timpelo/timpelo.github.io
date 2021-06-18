@@ -36,6 +36,12 @@ function initPage(dateGoal) {
     } else {
       $("#pokemon-img").attr("src", pokemonArtUrlBase + pokedexId + ".png?raw=true");
     }
+  } else {
+    // Days are in the past. Show congrats thing
+    $("#pokemon-img").attr("src", "img/pokemons.png");
+    $("#pokemon-img").addClass("pokemon-img-large");
+    $("#name-and-number").html("Congratulations! You caught them all!");
+    $("#name-and-number").prop('href', "https://www.youtube.com/watch?v=rg6CiPI6h2g");
   }
 
   // Set visible date to footer
