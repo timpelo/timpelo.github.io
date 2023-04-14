@@ -11,30 +11,39 @@ function initPage(dateGoal) {
   if (days > 0) {
     var pokemonToday = pokemonArray[days - 1];
 
-    var nameText = "#" + pokemonToday.pkdx_id + " " + pokemonToday.name;
-    var desc = pokemonToday.description;
+    if(pokemonToday) {
+      var nameText = "#" + pokemonToday.pkdx_id + " " + pokemonToday.name;
+      var desc = pokemonToday.description;
 
-    var descFirstHalf = desc.substring(0, desc.length / 2);
-    var descSecondHalf = desc.substring(desc.length / 2, desc.length);
-    var descFixed = desc;
+      var descFirstHalf = desc.substring(0, desc.length / 2);
+      var descSecondHalf = desc.substring(desc.length / 2, desc.length);
+      var descFixed = desc;
 
-    // Sometiems there are is duplicate description. Check if two halfs of description
-    // are identical.
-    if (descFirstHalf.trim() == descSecondHalf.trim()) {
-      descFixed = descFirstHalf;
-    }
+      // Sometiems there are is duplicate description. Check if two halfs of description
+      // are identical.
+      if (descFirstHalf.trim() == descSecondHalf.trim()) {
+        descFixed = descFirstHalf;
+      }
 
-    $("#name-and-number").html(nameText);
-    $("#name-and-number").prop('href', pokedexUrlBase + pokemonToday.name.toLowerCase());
-    $("#pokemon-desc").html(descFixed);
+      $("#name-and-number").html(nameText);
+      $("#name-and-number").prop('href', pokedexUrlBase + pokemonToday.name.toLowerCase());
+      $("#pokemon-desc").html(descFixed);
 
-    var pokedexId = addLeadingZeros(pokemonToday.pkdx_id);
+      var pokedexId = addLeadingZeros(pokemonToday.pkdx_id);
 
-    if(pokedexId == 7) {
-      // For Squirtle we use custom image
-      $("#pokemon-img").attr("src", "img/squirtle.png");
+      if(pokedexId == 7) {
+        // For Squirtle we use custom image
+        $("#pokemon-img").attr("src", "img/squirtle.png");
+      } else {
+        $("#pokemon-img").attr("src", pokemonArtUrlBase + pokedexId + ".png?raw=true");
+      }
     } else {
-      $("#pokemon-img").attr("src", pokemonArtUrlBase + pokedexId + ".png?raw=true");
+      // ##POKEMON_NUMBER##
+      let pokemonNotFoundElem = $('#pokemon-not-found');
+      let text = pokemonNotFoundElem.text();
+      text = text.replace('##POKEMON_NUMBER##', days - 1);
+      pokemonNotFoundElem.html(text);
+      pokemonNotFoundElem.show();
     }
   } else {
     // Days are in the past. Show congrats thing
@@ -65,7 +74,6 @@ function dateFromStorage() {
 
   if (itemString) {
     return JSON.parse(itemString);
-    return new Date("2021-03-15");
   } else {
     return null;
   }
